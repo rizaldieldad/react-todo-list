@@ -17,7 +17,11 @@ function TodoItem ({ todo }) {
   }
 
   return (
-    <li className='bg-gray-800 text-gray-300 p-3 rounded-md border-l-4 border-purple-500 flex items-center justify-between'>
+    <li
+      className={`bg-gray-800 text-gray-300 p-3 rounded-md border-l-4 ${
+        todo.isCompleted === true ? 'border-green-500' : 'border-purple-600'
+      } flex items-center justify-between`}
+    >
       <span className='flex-grow mr-4 break-words'>{todo.title}</span>
       <div className='flex-shrink-0 flex items-center gap-2'>
         {todo.isCompleted === false ? (
